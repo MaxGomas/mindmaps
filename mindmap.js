@@ -10,19 +10,21 @@ class InteractiveMindmap {
         this.tooltip = null;
         this.nodeIdCounter = 0;
         this.selectedNode = null; // Track the currently selected node
+        this.loader = new MindmapLoader(); // Initialize the loader
+        this.availableMindmaps = []; // Store available mindmaps
         
         this.init();
     }
 
-    init() {
+    async init() {
         console.log('Initializing mindmap...');
         this.setupSVG();
         this.setupZoom();
         this.setupTooltip();
         this.setupEventListeners();
         
-        // Load hardcoded sample data
-        this.loadSampleData();
+        // Load available mindmaps
+        await this.loadAvailableMindmaps();
         
         console.log('Initialization complete');
     }
@@ -75,16 +77,83 @@ class InteractiveMindmap {
         this.tooltip = d3.select("#tooltip");
     }
 
-    loadSampleData() {
-        // Use rich data from mindmap-data.js
-        const sampleData = mindmapData.technology;
+    async loadAvailableMindmaps() {
+        try {
+            console.log('Loading available mindmaps...');
+            this.availableMindmaps = await this.loader.loadMindmaps();
+            this.populateMindmapDropdown();
+            
+            // Load the first mindmap if available
+            if (this.availableMindmaps.length > 0) {
+                await this.loadMindmap(this.availableMindmaps[0].key);
+            } else {
+                console.warn('No mindmaps found, falling back to hardcoded data');
+                this.loadFallbackData();
+            }
+        } catch (error) {
+            console.error('Error loading mindmaps:', error);
+            this.loadFallbackData();
+        }
+    }
 
-        console.log('Loading sample data:', sampleData);
-        this.currentData = this.processData(sampleData);
-        this.renderMindmap();
+    populateMindmapDropdown() {
+        const select = d3.select("#mindmapSelect");
         
-        // Initialize node info panel
-        this.updateNodeInfo(null);
+        // Clear existing options
+        select.selectAll("option").remove();
+        
+        // Add options for each mindmap
+        select.selectAll("option")
+            .data(this.availableMindmaps)
+            .enter()
+            .append("option")
+            .attr("value", d => d.key)
+            .text(d => d.title);
+            
+        // Add change event listener
+        select.on("change", (event) => {
+            const selectedKey = event.target.value;
+            if (selectedKey) {
+                this.loadMindmap(selectedKey);
+            }
+        });
+    }
+
+    async loadMindmap(key) {
+        try {
+            console.log(`Loading mindmap: ${key}`);
+            const mindmapData = this.loader.getMindmap(key);
+            
+            if (mindmapData) {
+                console.log('Loading mindmap data:', mindmapData);
+                this.currentData = this.processData(mindmapData);
+                this.renderMindmap();
+                
+                // Update dropdown selection
+                d3.select("#mindmapSelect").node().value = key;
+                
+                // Clear selection when loading new mindmap
+                this.clearSelection();
+                this.updateNodeInfo(null);
+            } else {
+                console.error(`Mindmap not found: ${key}`);
+            }
+        } catch (error) {
+            console.error('Error loading mindmap:', error);
+        }
+    }
+
+    loadFallbackData() {
+        // Fallback to hardcoded data if loading fails
+        if (typeof mindmapData !== 'undefined' && mindmapData.technology) {
+            console.log('Using fallback hardcoded data');
+            const sampleData = mindmapData.technology;
+            this.currentData = this.processData(sampleData);
+            this.renderMindmap();
+            this.updateNodeInfo(null);
+        } else {
+            console.error('No fallback data available');
+        }
     }
 
     setupEventListeners() {
@@ -92,6 +161,7 @@ class InteractiveMindmap {
         d3.select("#resetView").on("click", () => this.resetView());
         d3.select("#expandAll").on("click", () => this.expandAll());
         d3.select("#collapseAll").on("click", () => this.collapseAll());
+        d3.select("#refreshMindmaps").on("click", () => this.refreshMindmaps());
 
         // Window resize
         window.addEventListener("resize", () => this.handleResize());
@@ -432,6 +502,31 @@ class InteractiveMindmap {
             }
         });
         this.update(this.root);
+    }
+
+    async refreshMindmaps() {
+        try {
+            console.log('Refreshing mindmaps...');
+            
+            // Show loading state
+            const select = d3.select("#mindmapSelect");
+            select.selectAll("option").remove();
+            select.append("option").attr("value", "").text("Refreshing mindmaps...");
+            
+            // Clear current data
+            this.loader.mindmaps.clear();
+            this.availableMindmaps = [];
+            
+            // Reload mindmaps
+            await this.loadAvailableMindmaps();
+            
+            console.log('Mindmaps refreshed successfully');
+        } catch (error) {
+            console.error('Error refreshing mindmaps:', error);
+            const select = d3.select("#mindmapSelect");
+            select.selectAll("option").remove();
+            select.append("option").attr("value", "").text("Error loading mindmaps");
+        }
     }
 
     handleResize() {

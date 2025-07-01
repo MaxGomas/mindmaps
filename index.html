@@ -12,6 +12,10 @@
         <header>
             <h1>Interactive Mindmap Explorer</h1>
             <div class="controls">
+                <select id="mindmapSelect">
+                    <option value="">Loading mindmaps...</option>
+                </select>
+                <button id="refreshMindmaps" title="Refresh mindmaps from server">🔄 Refresh</button>
                 <button id="resetView">Reset View</button>
                 <button id="expandAll">Expand All</button>
                 <button id="collapseAll">Collapse All</button>
@@ -34,6 +38,7 @@
         <div id="tooltip" class="tooltip"></div>
     </div>
     
+    <script src="mindmap-loader.js"></script>
     <script src="mindmap-data.js"></script>
     <script src="mindmap.js"></script>
 </body>

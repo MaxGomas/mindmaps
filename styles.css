@@ -54,12 +54,19 @@ select {
     background: #f8f9fa;
     color: #2c3e50;
     border: 2px solid #e9ecef;
+    min-width: 200px;
+    font-weight: 500;
 }
 
 select:focus {
     outline: none;
     border-color: #667eea;
     box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+select:hover {
+    border-color: #667eea;
+    background: #ffffff;
 }
 
 button {

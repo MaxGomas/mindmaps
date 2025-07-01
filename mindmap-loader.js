@@ -23,7 +23,16 @@ class MindmapLoader {
             const loadPromises = mindmapFiles.map(async (file) => {
                 try {
                     console.log(`Loading mindmap: ${file}`);
-                    const response = await fetch(`./mindmaps/${file}`);
+                    
+                    // Add cache-busting parameter to ensure fresh data
+                    const cacheBuster = new Date().getTime();
+                    const response = await fetch(`./mindmaps/${file}?v=${cacheBuster}`, {
+                        cache: 'no-cache',
+                        headers: {
+                            'Cache-Control': 'no-cache',
+                            'Pragma': 'no-cache'
+                        }
+                    });
                     
                     // Handle both 200 (OK) and 304 (Not Modified) responses
                     if (!response.ok && response.status !== 304) {
@@ -67,7 +76,14 @@ class MindmapLoader {
 
         // First, try to load an index file that lists all available mindmaps
         try {
-            const response = await fetch('./mindmaps/index.json');
+            const cacheBuster = new Date().getTime();
+            const response = await fetch(`./mindmaps/index.json?v=${cacheBuster}`, {
+                cache: 'no-cache',
+                headers: {
+                    'Cache-Control': 'no-cache',
+                    'Pragma': 'no-cache'
+                }
+            });
             // Accept both 200 and 304 status codes
             if (response.ok || response.status === 304) {
                 const indexData = await response.json();
@@ -85,7 +101,15 @@ class MindmapLoader {
         for (const file of knownFiles) {
             try {
                 console.log(`Checking for file: ${file}`);
-                const response = await fetch(`./mindmaps/${file}`);
+                const cacheBuster = new Date().getTime();
+                const response = await fetch(`./mindmaps/${file}?v=${cacheBuster}`, {
+                    cache: 'no-cache',
+                    headers: {
+                        'Cache-Control': 'no-cache',
+                        'Pragma': 'no-cache'
+                    }
+                });
+                
                 // Accept both 200 (OK) and 304 (Not Modified) as successful
                 if (response.ok || response.status === 304) {
                     console.log(`✓ Found: ${file} (Status: ${response.status})`);
