@@ -1,0 +1,144 @@
+{
+  "title": "Full-Stack Development Learning Path",
+  "name": "Full-Stack Development Learning Path",
+  "children": [
+    {
+      "name": "Frontend Development",
+      "description": "User interface and experience",
+      "details": "Frontend development focuses on creating engaging user interfaces and seamless user experiences.",
+      "children": [
+        {
+          "name": "HTML & CSS",
+          "description": "Structure and styling fundamentals",
+          "details": "HTML provides structure while CSS handles styling and layout of web pages.",
+          "children": [
+            {
+              "name": "Semantic HTML",
+              "description": "Meaningful markup",
+              "details": "Using HTML elements that clearly describe their meaning to both browser and developer."
+            },
+            {
+              "name": "CSS Grid & Flexbox",
+              "description": "Modern layout systems",
+              "details": "Powerful CSS layout systems for creating responsive designs."
+            },
+            {
+              "name": "CSS Animations",
+              "description": "Interactive visual effects",
+              "details": "Creating smooth animations and transitions to enhance user experience."
+            }
+          ]
+        },
+        {
+          "name": "JavaScript",
+          "description": "Programming language for web interactivity",
+          "details": "JavaScript enables dynamic behavior and interactivity in web applications.",
+          "children": [
+            {
+              "name": "ES6+ Features",
+              "description": "Modern JavaScript syntax",
+              "details": "Latest JavaScript features including arrow functions, destructuring, and modules."
+            },
+            {
+              "name": "DOM Manipulation",
+              "description": "Interacting with web pages",
+              "details": "Dynamically changing HTML content and structure using JavaScript."
+            },
+            {
+              "name": "Async Programming",
+              "description": "Promises and async/await",
+              "details": "Handling asynchronous operations efficiently in JavaScript."
+            }
+          ]
+        },
+        {
+          "name": "React.js",
+          "description": "Component-based UI library",
+          "details": "React enables building reusable UI components for scalable web applications.",
+          "children": [
+            {
+              "name": "Components",
+              "description": "Reusable UI building blocks",
+              "details": "Creating modular, reusable components for building complex UIs."
+            },
+            {
+              "name": "State Management",
+              "description": "Managing application state",
+              "details": "Handling component state and global application state effectively."
+            },
+            {
+              "name": "React Hooks",
+              "description": "Modern React patterns",
+              "details": "Using hooks for state management and side effects in functional components."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Backend Development",
+      "description": "Server-side logic and data management",
+      "details": "Backend development handles server logic, databases, and API creation.",
+      "children": [
+        {
+          "name": "Node.js",
+          "description": "JavaScript runtime for servers",
+          "details": "Node.js enables JavaScript development on the server side.",
+          "children": [
+            {
+              "name": "Express.js",
+              "description": "Web application framework",
+              "details": "Minimal and flexible Node.js web application framework."
+            },
+            {
+              "name": "API Development",
+              "description": "Creating RESTful services",
+              "details": "Building APIs for communication between frontend and backend."
+            }
+          ]
+        },
+        {
+          "name": "Databases",
+          "description": "Data storage and retrieval",
+          "details": "Understanding different database types and their use cases.",
+          "children": [
+            {
+              "name": "MongoDB",
+              "description": "NoSQL document database",
+              "details": "Flexible, document-based database for modern applications."
+            },
+            {
+              "name": "PostgreSQL",
+              "description": "Relational database",
+              "details": "Advanced relational database with extensive feature set."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "DevOps & Deployment",
+      "description": "Development operations and deployment strategies",
+      "details": "DevOps practices for efficient development and deployment workflows.",
+      "children": [
+        {
+          "name": "Version Control",
+          "description": "Code management with Git",
+          "details": "Managing code changes and collaboration using Git version control.",
+          "children": [
+            {
+              "name": "Git Workflows",
+              "description": "Branching strategies",
+              "details": "Effective branching and merging strategies for team collaboration."
+            },
+            {
+              "name": "GitHub Actions",
+              "description": "CI/CD automation",
+              "details": "Automating testing and deployment workflows."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

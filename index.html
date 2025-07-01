@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Mindmap Explorer</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <header>
+            <h1>Interactive Mindmap Explorer</h1>
+            <div class="controls">
+                <button id="resetView">Reset View</button>
+                <button id="expandAll">Expand All</button>
+                <button id="collapseAll">Collapse All</button>
+            </div>
+        </header>
+        
+        <main>
+            <div id="mindmap-container">
+                <svg id="mindmap"></svg>
+            </div>
+            
+            <div id="node-info" class="info-panel">
+                <h3>Node Information</h3>
+                <div id="node-details">
+                    <p>Click on a node to see details</p>
+                </div>
+            </div>
+        </main>
+        
+        <div id="tooltip" class="tooltip"></div>
+    </div>
+    
+    <script src="mindmap-data.js"></script>
+    <script src="mindmap.js"></script>
+</body>
+</html>

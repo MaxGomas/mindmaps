@@ -1,0 +1,139 @@
+{
+  "title": "Business Strategy Framework",
+  "name": "Business Strategy Framework",
+  "children": [
+    {
+      "name": "Market Analysis",
+      "description": "Understanding market dynamics and opportunities",
+      "details": "Comprehensive analysis of market conditions, competition, and opportunities for strategic decision-making.",
+      "children": [
+        {
+          "name": "Competitive Analysis",
+          "description": "Analyzing competitors and market position",
+          "details": "Systematic evaluation of competitors' strengths, weaknesses, and market strategies.",
+          "children": [
+            {
+              "name": "SWOT Analysis",
+              "description": "Strengths, Weaknesses, Opportunities, Threats",
+              "details": "Framework for evaluating internal and external factors affecting business performance."
+            },
+            {
+              "name": "Porter's Five Forces",
+              "description": "Industry competition analysis",
+              "details": "Model for analyzing competitive intensity and attractiveness of an industry."
+            },
+            {
+              "name": "Market Positioning",
+              "description": "Brand position in market",
+              "details": "How a brand is perceived relative to competitors in the target market."
+            }
+          ]
+        },
+        {
+          "name": "Customer Research",
+          "description": "Understanding target customers",
+          "details": "Research methodologies to understand customer needs, preferences, and behaviors.",
+          "children": [
+            {
+              "name": "Customer Personas",
+              "description": "Detailed customer profiles",
+              "details": "Semi-fictional representations of ideal customers based on research and data."
+            },
+            {
+              "name": "Journey Mapping",
+              "description": "Customer experience mapping",
+              "details": "Visual representation of the customer journey and touchpoints."
+            },
+            {
+              "name": "Market Segmentation",
+              "description": "Dividing market into segments",
+              "details": "Grouping customers based on shared characteristics or behaviors."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Strategic Planning",
+      "description": "Long-term planning and goal setting",
+      "details": "Systematic approach to defining direction, making decisions, and allocating resources.",
+      "children": [
+        {
+          "name": "Vision & Mission",
+          "description": "Defining organizational purpose",
+          "details": "Establishing clear vision and mission statements to guide organizational direction.",
+          "children": [
+            {
+              "name": "Core Values",
+              "description": "Fundamental beliefs",
+              "details": "Essential principles that guide organizational behavior and decision-making."
+            },
+            {
+              "name": "Strategic Objectives",
+              "description": "Long-term goals",
+              "details": "Specific, measurable goals that support the organization's mission."
+            }
+          ]
+        },
+        {
+          "name": "Resource Allocation",
+          "description": "Optimizing resource distribution",
+          "details": "Strategic distribution of financial, human, and technological resources.",
+          "children": [
+            {
+              "name": "Budget Planning",
+              "description": "Financial resource allocation",
+              "details": "Planning and allocating financial resources to support strategic objectives."
+            },
+            {
+              "name": "Talent Management",
+              "description": "Human resource strategy",
+              "details": "Strategies for attracting, developing, and retaining top talent."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Digital Transformation",
+      "description": "Technology-driven business evolution",
+      "details": "Integration of digital technology into all areas of business to improve operations and customer value.",
+      "children": [
+        {
+          "name": "Process Automation",
+          "description": "Automating business processes",
+          "details": "Using technology to automate repetitive tasks and improve efficiency.",
+          "children": [
+            {
+              "name": "Workflow Optimization",
+              "description": "Streamlining operations",
+              "details": "Improving business processes for maximum efficiency and effectiveness."
+            },
+            {
+              "name": "AI Integration",
+              "description": "Artificial intelligence adoption",
+              "details": "Incorporating AI technologies to enhance business capabilities."
+            }
+          ]
+        },
+        {
+          "name": "Data Analytics",
+          "description": "Data-driven decision making",
+          "details": "Using data analysis to inform strategic decisions and improve performance.",
+          "children": [
+            {
+              "name": "Business Intelligence",
+              "description": "Data analysis tools",
+              "details": "Technologies and strategies for analyzing business information."
+            },
+            {
+              "name": "Predictive Analytics",
+              "description": "Forecasting future trends",
+              "details": "Using statistical algorithms to predict future outcomes based on historical data."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

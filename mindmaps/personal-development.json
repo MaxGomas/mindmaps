@@ -1,0 +1,88 @@
+{
+  "title": "Personal Development",
+  "name": "Personal Development",
+  "children": [
+    {
+      "name": "Health & Wellness",
+      "description": "Physical and mental well-being",
+      "details": "Maintaining good health is fundamental to personal development and achieving life goals.",
+      "children": [
+        {
+          "name": "Physical Fitness",
+          "description": "Exercise and physical activity",
+          "details": "Regular exercise improves physical health, mental clarity, and overall quality of life.",
+          "children": [
+            {
+              "name": "Cardio Training",
+              "description": "Heart and lung conditioning",
+              "details": "Cardiovascular exercise strengthens the heart and improves endurance."
+            },
+            {
+              "name": "Strength Training",
+              "description": "Building muscle and bone density",
+              "details": "Resistance training helps build muscle mass and strengthen bones."
+            }
+          ]
+        },
+        {
+          "name": "Mental Health",
+          "description": "Psychological well-being",
+          "details": "Mental health is just as important as physical health for overall wellness.",
+          "children": [
+            {
+              "name": "Mindfulness",
+              "description": "Present moment awareness",
+              "details": "Practicing mindfulness reduces stress and improves emotional regulation."
+            },
+            {
+              "name": "Meditation",
+              "description": "Mental training practice",
+              "details": "Regular meditation practice enhances focus, reduces anxiety, and promotes inner peace."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Career Growth",
+      "description": "Professional development and advancement",
+      "details": "Continuous learning and skill development are essential for career success.",
+      "children": [
+        {
+          "name": "Skill Development",
+          "description": "Building professional competencies",
+          "details": "Regularly updating and expanding your skillset keeps you competitive in the job market.",
+          "children": [
+            {
+              "name": "Technical Skills",
+              "description": "Job-specific abilities",
+              "details": "Technical skills are the specific knowledge and abilities required for your role."
+            },
+            {
+              "name": "Soft Skills",
+              "description": "Interpersonal abilities",
+              "details": "Communication, leadership, and teamwork skills are valuable in any profession."
+            }
+          ]
+        },
+        {
+          "name": "Networking",
+          "description": "Building professional relationships",
+          "details": "Building a strong professional network opens doors to opportunities and mentorship.",
+          "children": [
+            {
+              "name": "Industry Events",
+              "description": "Conferences and meetups",
+              "details": "Attending industry events helps you connect with peers and learn about trends."
+            },
+            {
+              "name": "Online Presence",
+              "description": "Professional social media",
+              "details": "Maintaining a professional online presence helps you connect with others in your field."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
