@@ -197,8 +197,28 @@ class InteractiveMindmap {
         nodeEnter.append("text")
             .attr("class", "node-text")
             .attr("dy", "0.31em")
-            .attr("x", d => d._children || d.children ? -8 : 8) // Adjust spacing for better button integration
-            .style("text-anchor", d => d._children || d.children ? "end" : "start")
+            .attr("x", d => {
+                // Better positioning based on node type and whether it has children
+                const hasChildren = d._children || d.children;
+                const nodeRadius = d.depth === 0 ? 20 : 10;
+                const textOffset = nodeRadius + 8; // Offset from node edge plus padding
+                
+                if (d.depth === 0) {
+                    // Root node: center the text below
+                    return 0;
+                } else if (hasChildren) {
+                    // Nodes with children: text to the left
+                    return -(textOffset + 6); // Extra space for expand button
+                } else {
+                    // Leaf nodes: text to the right
+                    return textOffset;
+                }
+            })
+            .attr("y", d => d.depth === 0 ? 35 : 0) // Root text below, others centered
+            .style("text-anchor", d => {
+                if (d.depth === 0) return "middle";
+                return (d._children || d.children) ? "end" : "start";
+            })
             .style("font-size", d => d.depth === 0 ? "14px" : "12px")
             .style("font-weight", d => d.depth === 0 ? "bold" : "normal")
             .style("fill", "#333")
@@ -260,6 +280,29 @@ class InteractiveMindmap {
         nodeUpdate.select(".expand-text")
             .attr("x", d => d.depth === 0 ? 25 : 15)
             .attr("y", 0);
+
+        // Update text positioning
+        nodeUpdate.select(".node-text")
+            .transition()
+            .duration(600)
+            .attr("x", d => {
+                const hasChildren = d._children || d.children;
+                const nodeRadius = d.depth === 0 ? 20 : 10;
+                const textOffset = nodeRadius + 8;
+                
+                if (d.depth === 0) {
+                    return 0;
+                } else if (hasChildren) {
+                    return -(textOffset + 6);
+                } else {
+                    return textOffset;
+                }
+            })
+            .attr("y", d => d.depth === 0 ? 35 : 0)
+            .style("text-anchor", d => {
+                if (d.depth === 0) return "middle";
+                return (d._children || d.children) ? "end" : "start";
+            });
 
         // Remove any exiting nodes
         const nodeExit = node.exit().transition()
