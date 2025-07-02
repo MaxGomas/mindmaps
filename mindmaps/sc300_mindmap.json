@@ -1,0 +1,213 @@
+{
+  "title": "SC-300 Microsoft Identity and Access Administrator",
+  "name": "SC-300 Microsoft Identity and Access Administrator",
+  "description": "A comprehensive mind map of the SC-300 certification topics, structured for learning and understanding.",
+  "details": "This mind map outlines the core domains of the SC-300 exam, including identity management, authentication, workload identities, and identity governance. Each node provides explanations, implementation guidance, and purpose.",
+  "children": [
+    {
+      "name": "Implement and Manage User Identities",
+      "description": "Manage Microsoft Entra ID tenants, users, groups, devices, and hybrid identity.",
+      "details": "This domain focuses on configuring and managing identity infrastructure in Microsoft Entra ID (Azure AD), including user lifecycle, external identities, and hybrid identity integration.",
+      "children": [
+        {
+          "name": "Tenant Configuration and Roles",
+          "description": "Configure tenant settings and administrative roles.",
+          "details": "Set up tenant branding, domain names, and assign roles using least privilege principles.",
+          "children": [
+            {
+              "name": "Custom Domain Configuration",
+              "description": "Add and verify custom domains.",
+              "details": "Allows organizations to use branded domain names instead of default onmicrosoft.com domains."
+            },
+            {
+              "name": "Administrative Units and Role Assignments",
+              "description": "Delegate administration using AUs.",
+              "details": "Administrative Units allow scoping of role assignments to specific groups or departments."
+            }
+          ]
+        },
+        {
+          "name": "User and Group Management",
+          "description": "Manage user and group lifecycle.",
+          "details": "Create, update, and delete users and groups. Use bulk operations and assign licenses.",
+          "children": [
+            {
+              "name": "Bulk Operations",
+              "description": "Import or update users in bulk.",
+              "details": "Use CSV files or PowerShell scripts to manage large sets of users efficiently."
+            },
+            {
+              "name": "Custom Security Attributes",
+              "description": "Extend user schema.",
+              "details": "Add metadata to user objects for custom applications or policies."
+            }
+          ]
+        },
+        {
+          "name": "Device Identity Management",
+          "description": "Manage device registration and compliance.",
+          "details": "Configure Azure AD Join, Hybrid Join, and device compliance policies."
+        },
+        {
+          "name": "External Identities",
+          "description": "Enable B2B and B2C collaboration.",
+          "details": "Allow guest users and external partners to access resources securely.",
+          "children": [
+            {
+              "name": "Cross-Tenant Access Settings",
+              "description": "Control access between tenants.",
+              "details": "Define collaboration rules and trust settings for external Azure AD tenants."
+            },
+            {
+              "name": "Identity Providers",
+              "description": "Support social and enterprise IdPs.",
+              "details": "Enable sign-in using Google, Facebook, or SAML-based identity providers."
+            }
+          ]
+        },
+        {
+          "name": "Hybrid Identity",
+          "description": "Integrate on-premises AD with Azure AD.",
+          "details": "Hybrid identity allows users to access both on-prem and cloud resources using a single identity.",
+          "children": [
+            {
+              "name": "Deploy Azure AD Connect",
+              "description": "Install and configure sync tool.",
+              "details": "Azure AD Connect synchronizes on-premises AD objects to Azure AD."
+            },
+            {
+              "name": "Configure Password Hash Sync (PHS)",
+              "description": "Enable cloud authentication.",
+              "details": "PHS syncs password hashes to Azure AD for seamless sign-in."
+            },
+            {
+              "name": "Configure Pass-through Authentication (PTA)",
+              "description": "Authenticate against on-prem AD.",
+              "details": "PTA validates passwords directly against on-prem AD without syncing hashes."
+            },
+            {
+              "name": "Enable Seamless Single Sign-On (SSO)",
+              "description": "Allow automatic sign-in.",
+              "details": "SSO enables users to sign in without re-entering credentials on domain-joined devices."
+            },
+            {
+              "name": "Monitor with Azure AD Connect Health",
+              "description": "Track sync and authentication health.",
+              "details": "Provides alerts and reports on synchronization and authentication issues."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Implement Authentication and Access Management",
+      "description": "Configure authentication methods, Conditional Access, and Identity Protection.",
+      "details": "This domain covers securing user sign-ins using MFA, passwordless methods, and enforcing access policies.",
+      "children": [
+        {
+          "name": "Authentication Methods",
+          "description": "Configure MFA, SSPR, and passwordless options.",
+          "details": "Secure user authentication using multiple factors and modern methods.",
+          "children": [
+            {
+              "name": "Multi-Factor Authentication (MFA)",
+              "description": "Require additional verification.",
+              "details": "MFA adds a second layer of security using phone, app, or hardware token."
+            },
+            {
+              "name": "Self-Service Password Reset (SSPR)",
+              "description": "Allow users to reset passwords.",
+              "details": "Users can reset their passwords securely without admin intervention."
+            },
+            {
+              "name": "Passwordless Authentication",
+              "description": "Use biometrics or security keys.",
+              "details": "Methods include Windows Hello, FIDO2 keys, and Authenticator app."
+            }
+          ]
+        },
+        {
+          "name": "Conditional Access",
+          "description": "Enforce access policies based on conditions.",
+          "details": "Control access to apps and data based on user, location, device, and risk.",
+          "children": [
+            {
+              "name": "Policy Assignments",
+              "description": "Target users and apps.",
+              "details": "Define who the policy applies to and which apps are protected."
+            },
+            {
+              "name": "Access Controls",
+              "description": "Define grant or session controls.",
+              "details": "Require MFA, compliant device, or block access based on conditions."
+            }
+          ]
+        },
+        {
+          "name": "Identity Protection",
+          "description": "Detect and respond to identity risks.",
+          "details": "Use risk-based policies to block or challenge risky sign-ins and users."
+        },
+        {
+          "name": "Azure RBAC",
+          "description": "Control access to Azure resources.",
+          "details": "Assign roles to users, groups, or service principals to manage Azure resources."
+        }
+      ]
+    },
+    {
+      "name": "Plan and Implement Workload Identities",
+      "description": "Manage application identities and permissions.",
+      "details": "This domain focuses on securing and managing identities used by applications and services.",
+      "children": [
+        {
+          "name": "Service Principals and Managed Identities",
+          "description": "Enable app authentication.",
+          "details": "Applications use service principals or managed identities to access resources securely."
+        },
+        {
+          "name": "Enterprise App Integration",
+          "description": "Configure SSO and provisioning.",
+          "details": "Integrate SaaS and on-prem apps with Azure AD for authentication and user provisioning."
+        },
+        {
+          "name": "App Registration and API Permissions",
+          "description": "Register apps and assign permissions.",
+          "details": "Define how apps authenticate and what APIs they can access."
+        },
+        {
+          "name": "Defender for Cloud Apps",
+          "description": "Monitor and control app usage.",
+          "details": "Use Cloud App Security to discover, monitor, and protect cloud applications."
+        }
+      ]
+    },
+    {
+      "name": "Plan and Implement Identity Governance",
+      "description": "Control and monitor access lifecycle.",
+      "details": "This domain ensures users have appropriate access and that access is reviewed and governed.",
+      "children": [
+        {
+          "name": "Entitlement Management",
+          "description": "Manage access packages and catalogs.",
+          "details": "Bundle resources into access packages with approval workflows and expiration policies."
+        },
+        {
+          "name": "Access Reviews",
+          "description": "Periodically review access rights.",
+          "details": "Ensure users still need access to groups, apps, or roles through scheduled reviews."
+        },
+        {
+          "name": "Privileged Identity Management (PIM)",
+          "description": "Manage just-in-time access.",
+          "details": "Grant temporary privileged roles with approval and audit capabilities."
+        },
+        {
+          "name": "Monitoring and Reporting",
+          "description": "Track identity activity and compliance.",
+          "details": "Use logs, reports, and Secure Score to monitor and improve identity security posture."
+        }
+      ]
+    }
+  ]
+}

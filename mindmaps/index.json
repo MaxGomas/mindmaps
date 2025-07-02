@@ -2,8 +2,7 @@
   "files": [
     "technology-trends.json",
     "learning-path.json",
-    "business-strategy.json",
-    "personal-development.json"
+    "sc300_mindmap.json"
   ],
   "description": "Add new mindmap JSON files to this list to make them automatically available in the application"
 }
